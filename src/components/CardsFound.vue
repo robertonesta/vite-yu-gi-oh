@@ -1,12 +1,19 @@
 <script>
-    export default {
-        name: "CardsFound",
+import {store} from "../assets/data/store"
+
+export default {
+    name: "CardsFound",
+    data(){
+        return{
+            store
+        }
     }
+}
 </script>
 
 <template>
     <div class="dark-bg text-white p-2">
-        <span>Found x cards</span>
+        <span v-if="store.cards"> Found {{store.cards.length}} cards</span>
     </div>
 </template>
 
@@ -16,5 +23,4 @@
 .dark-bg{
     background-color: #212529;
 }
-
 </style>
