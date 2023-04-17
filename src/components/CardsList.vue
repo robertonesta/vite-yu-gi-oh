@@ -15,7 +15,6 @@ export default {
     },
     methods: {
         generateCards() {
-        console.log('ciao')
             axios.get(store.API_URL)
                 .then(response => {
                     store.cards = response.data.data
@@ -24,7 +23,7 @@ export default {
                 })
                 .catch(err => {
                     console.log(err);
-                    console.error(err.messagge);
+                    console.error(err.message);
                 })
         }
     },
@@ -37,7 +36,7 @@ export default {
 
 <template>
     <section class="container">
-        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6">
 
             <!-- cardItem -->
             <SingleCard :card="card" v-for="card in store.cards" v-if="!store.loading"></SingleCard>
