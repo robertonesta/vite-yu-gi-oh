@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex align-items-center py-2">
         <div class="logo">
-            <img class="img-fluid" width="60" src="../assets/img/Yu-Gi-Oh!_(Logo).jpg" alt="">
+            <img class="img-fluid" width="100" src="../assets/img/Yugioh_anime_logo.webp" alt="">
         </div>
         <div class="title">
             <h1>Yu-Gi-Oh Api</h1>
