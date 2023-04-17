@@ -1,17 +1,37 @@
 <script>
-import SingleCard from "SingleCard.vue"
-    export default {
+import SingleCard from "./SingleCard.vue"
+import { store } from "../assets/data/store.js"
+import axios from 'axios';
+export default {
 
-        name: "CardsList",
-        components: {
-            SingleCard
-        },
-        data() {
-            return {
+    name: "CardsList",
+    components: {
+        SingleCard,
+    },
+    data() {
+        return {
             store
-            }
         }
-    }        
+    },
+    methods: {
+        generateCards() {
+        console.log('ciao')
+            axios.get(store.API_URL)
+                .then(response => {
+                    store.cards = response.data.data
+                    store.loading = false
+                    console.log(this.cards)
+                })
+                .catch(err => {
+                    console.log(err);
+                    console.error(err.messagge);
+                })
+        }
+    },
+    mounted(){
+        this.generateCards()
+    }
+}
 
 </script>
 
@@ -20,18 +40,15 @@ import SingleCard from "SingleCard.vue"
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
 
             <!-- cardItem -->
-            <SingleCard :card="cards" v-for="card in store.cards" v-if="!store.loading"></SingleCard>
+            <SingleCard :card="card" v-for="card in store.cards" v-if="!store.loading"></SingleCard>
 
-            <div class="loader" v-else>
+            <div v-else class="loader">
                 Loading...
             </div>
 
         </div>
     </section>
-    
 </template>
 
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

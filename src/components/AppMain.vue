@@ -1,4 +1,5 @@
 <script>
+import {store} from "../assets/data/store"
 import CardsFound from "./CardsFound.vue"
 import CardsList from "./CardsList.vue"
 
@@ -7,8 +8,12 @@ export default {
     components: {
         CardsFound,
         CardsList,
+    },
+    data(){
+        return { 
+            store
+        }
     }
-
 }
 </script>
 
