@@ -9,7 +9,7 @@ export default {
 
 <template>
     <div class="col">
-        <div class="SingleCard text-center">
+        <div class="SingleCard text-center h-100">
             <img class="img-fluid" :src="card.card_images[0].image_url" alt="card.name">
             <div class="text">
                 <h3>{{card.name}}</h3>
@@ -21,5 +21,9 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.SingleCard{
+    background-color: #d48f38;
+    color: #212529;
+}
 
 </style>
