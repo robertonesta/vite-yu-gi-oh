@@ -2,12 +2,15 @@
 import {store} from "../assets/data/store"
 import CardsFound from "./CardsFound.vue"
 import CardsList from "./CardsList.vue"
+import ArchetypeFilter from "./ArchetypeFilter.vue"
+
 
 export default {
     name: "AppMain",
     components: {
         CardsFound,
         CardsList,
+        ArchetypeFilter,
     },
     data(){
         return { 
@@ -20,10 +23,7 @@ export default {
 <template>
     <div class="sand-bg">
         <div class="container py-3">
-            <select class="form-select-m rounded" >
-                <option selected>Choose the archetype</option>
-                <option value="1">Alien</option>
-            </select>
+            <ArchetypeFilter></ArchetypeFilter>
         </div>
         <div class="container py-3 bg-light">
             <CardsFound/>

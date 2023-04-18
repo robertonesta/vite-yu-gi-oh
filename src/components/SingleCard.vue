@@ -2,7 +2,7 @@
 export default {
     name: "SingleCard",
     props:{
-        card: Object
+        card: Object,
     }
 }
 </script>
@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .SingleCard{
-    background-color: #d48f38;
+    background-color: #ffc800a5;
     color: #212529;
 }
 

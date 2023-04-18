@@ -19,16 +19,24 @@ export default {
                 .then(response => {
                     store.cards = response.data.data
                     store.loading = false
-                    console.log(this.cards)
+                    console.log(this.store.cards)
                 })
                 .catch(err => {
                     console.log(err);
                     console.error(err.message);
                 })
-        }
+        },
+        generateArchetypes() {
+            axios.get(store.ARCHETYPES_URL)
+                .then(response => {
+                    store.archetypes = response.data
+                    console.log(this.store.archetypes)
+                })
+        },
     },
     mounted(){
-        this.generateCards()
+        this.generateCards(),
+        this.generateArchetypes()
     }
 }
 
