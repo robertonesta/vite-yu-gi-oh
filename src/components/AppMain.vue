@@ -16,6 +16,12 @@ export default {
         return { 
             store
         }
+    },
+    methods:{
+        exFunction(){
+            console.log("ciao")
+           // "&archetype="+store.selectedArchetype
+        }
     }
 }
 </script>
@@ -23,7 +29,7 @@ export default {
 <template>
     <div class="sand-bg">
         <div class="container py-3">
-            <ArchetypeFilter></ArchetypeFilter>
+            <ArchetypeFilter @changed="exFunction"></ArchetypeFilter>
         </div>
         <div class="container py-3 bg-light">
             <CardsFound/>

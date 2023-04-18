@@ -9,15 +9,15 @@ export default {
         }
     },
     props:{
-        archetype: Array
+        archetypes: Array
     }
 }
 </script>
 
 <template>
-    <select class="form-select-m rounded">
+    <select class="form-select-m rounded" @change="$emit('changed')">
         <option value="" selected>Choose the archetype</option>
-        
+        <option value="" v-for="archetype in store.archetypes">{{ archetype.archetype_name }}</option>
     </select>
 </template>
 
