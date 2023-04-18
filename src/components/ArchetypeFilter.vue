@@ -15,9 +15,9 @@ export default {
 </script>
 
 <template>
-    <select class="form-select-m rounded" @change="$emit('changed')">
+    <select class="form-select-m rounded" v-model="store.selectedArchetype" @change="$emit('generatoreCarte')">
         <option value="" selected>Choose the archetype</option>
-        <option value="" v-for="archetype in store.archetypes">{{ archetype.archetype_name }}</option>
+        <option :value="archetype.archetype_name" v-for="archetype in store.archetypes">{{ archetype.archetype_name }}</option>
     </select>
 </template>
 
